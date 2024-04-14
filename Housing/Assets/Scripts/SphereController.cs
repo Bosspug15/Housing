@@ -5,6 +5,18 @@ public class SphereController : MonoBehaviour, IDrag
 {
 
     private Rigidbody2D rb;
+    public GameObject paperTest;
+    [SerializeField] private Collider2D trash;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other == trash)
+        {
+            Debug.Log("enter");
+            Destroy(paperTest);
+            
+        }
+    }
 
     private void Awake()
     {

@@ -69,6 +69,7 @@ public class DragAndDrop : MonoBehaviour
                 yield return waitForFixedUpdate;
             }
             else {
+                
                 clickedObject.transform.position = Vector3.SmoothDamp(clickedObject.transform.position, ray.GetPoint(initialDistance), ref velocity, mouseDragSpeed);
                 yield return null;
             }
